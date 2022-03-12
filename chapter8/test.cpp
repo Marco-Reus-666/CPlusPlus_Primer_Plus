@@ -4,11 +4,11 @@
 #include<string>
 
 using std::cout; using std::cin; using std::endl; using std::string; using std::ostream; 
-using std::ofstream; using std::ios_base;using std::ios;//showpoint
+using std::ofstream; using std::ios_base;using std::ios;
 
 
 //程序清单8.8:
-void printOrWrite(ostream& os, string& name,const int arr[]);
+void printOrWrite(ostream& os, const string& name,const int arr[]);
 
 
 int main(){
@@ -21,8 +21,6 @@ int main(){
     //     cout << arr[i] << ", ";
     // cout << arr[i] << endl;
 
-    
-
     //写到文件中：
     string fileName = "test.txt";
     ofstream ofs;
@@ -32,6 +30,7 @@ int main(){
         return -1;
     }
     printOrWrite(ofs,name,arr);
+
     //打印：
     printOrWrite(cout,name,arr);
     
@@ -40,15 +39,10 @@ int main(){
 
 void printOrWrite(ostream& os, const string& name,const int arr[]){
 
-    //ios_base::fmtflags initial;
-    //initial = os.setf(ios_base::fixed);
-    //os.precision(0);
-    //os.setf(ios::showpoint);
     os << name << endl;
     int i;
     for(i = 0;i < 4;i++)
         os << arr[i] << ", ";
     os << arr[i] << endl;
 
-    //os.setf(initial);
 }

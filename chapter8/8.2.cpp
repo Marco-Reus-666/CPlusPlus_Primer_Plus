@@ -27,7 +27,7 @@ void showStu(const Students& stu);
 Students& accumulate(Students& sum_stu,const Students& one_stu);
 
 //程序清单8.8:
-void printOrWrite(ostream& os, string& name,const int arr[]);
+void printOrWrite(ostream& os, const string& name,const int arr[]);
 
 
 int main(){
