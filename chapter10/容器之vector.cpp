@@ -122,5 +122,31 @@ int main(){
     }
     cout << endl;
 
+//测试容器容量capacity和元素个数size，以及重置大小resize：
+    vector<int> v7(10,3);//初始化
+    for(vector<int>::iterator it = v7.begin(); it != v7.end(); it++){
+        cout << (*it) << ", ";
+    }
+    cout << endl;
+    cout << "容器的容器capacity = " << v7.capacity() << "；元素个数size = " << v7.size() << endl;//10 10 
+    v7.resize(16);//新位置默认是补0
+    for(vector<int>::iterator it = v7.begin(); it != v7.end(); it++){
+        cout << (*it) << ", ";
+    }
+    cout << endl;
+    cout << "容器的容器capacity = " << v7.capacity() << "；元素个数size = " << v7.size() << endl;//20 16
+    v7.resize(5);
+    for(vector<int>::iterator it = v7.begin(); it != v7.end(); it++){
+        cout << (*it) << ", ";
+    }
+    cout << endl;
+    cout << "容器的容器capacity = " << v7.capacity() << "；元素个数size = " << v7.size() << endl;//20 5
+    v7.resize(8,6);//也可以指定新位置的内容
+    for(vector<int>::iterator it = v7.begin(); it != v7.end(); it++){
+        cout << (*it) << ", ";
+    }
+    cout << endl;
+    cout << "容器的容器capacity = " << v7.capacity() << "；元素个数size = " << v7.size() << endl;//20 8
+
     return 0;
 }
